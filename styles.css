@@ -1,0 +1,610 @@
+:root {
+    --light-pink: #fce4ec;
+    --medium-pink: #f8bbd0;
+    --dark-pink: #f48fb1;
+    --text-dark: #333333;
+}
+
+/* Global section styles */
+section {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(3rem, 8vw, 8rem) 1rem;
+    box-sizing: border-box;
+}
+
+/* Hero section */
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hero video */
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* Hero overlay */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+    z-index: 1;
+}
+
+/* Our Story section */
+.our-story {
+    background: linear-gradient(to right, var(--light-pink), white, var(--light-pink));
+}
+
+/* Countdown section */
+.countdown {
+    background: linear-gradient(135deg, white, var(--light-pink));
+}
+
+/* Dress Code section */
+.dress-code {
+    background: linear-gradient(-135deg, var(--light-pink), white);
+}
+
+/* Ceremony Details section */
+.ceremony-details {
+    background: linear-gradient(to bottom, white, var(--light-pink));
+}
+
+/* Container width control */
+.content,
+.couple-info,
+.countdown-container,
+.attire-container,
+.venues-container {
+    width: min(90%, var(--section-max-width));
+    margin: 0 auto;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    section {
+        padding: clamp(2rem, 5vw, 4rem) 1rem;
+    }
+    
+    .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                    url('background.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .hero-video {
+        display: none; /* Optional: show fallback image on mobile to save bandwidth */
+    }
+}
+
+@media screen and (max-height: 600px) {
+    section {
+        min-height: auto;
+        padding: 4rem 1rem;
+    }
+}
+
+/* Fix for iOS Safari viewport height */
+@supports (-webkit-touch-callout: none) {
+    section {
+        min-height: -webkit-fill-available;
+    }
+}
+
+/* Ensure content stays centered on ultra-wide screens */
+@media screen and (min-width: 2000px) {
+    section {
+        padding: 8rem 1rem;
+    }
+    
+    .content,
+    .couple-info,
+    .countdown-container,
+    .attire-container,
+    .venues-container {
+        max-width: 1800px;
+    }
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Times New Roman', serif;
+}
+
+.hero {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(rgba(252, 228, 236, 0.3), rgba(244, 143, 177, 0.3)),
+                url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: var(--content-spacing);
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    padding: var(--content-spacing);
+    width: min(90%, var(--section-max-width));
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.invite {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    letter-spacing: 3px;
+    margin-bottom: clamp(1rem, 3vw, 2rem);
+}
+
+.names {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    margin: clamp(1.5rem, 4vw, 3rem) 0;
+    font-weight: normal;
+}
+
+.save-date {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    letter-spacing: 2px;
+    margin: clamp(1rem, 3vw, 2rem) 0;
+    font-weight: normal;
+}
+
+.date {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    margin: clamp(1rem, 3vw, 2rem) 0;
+    font-weight: normal;
+}
+
+.calendar-btn {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: clamp(0.8rem, 2vw, 1.5rem) clamp(1.5rem, 4vw, 3rem);
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: clamp(1rem, 3vw, 2rem);
+    width: fit-content;
+    min-width: 200px;
+}
+
+.calendar-btn:hover {
+    background: white;
+    color: var(--dark-pink);
+}
+
+.our-story {
+    padding: var(--content-spacing);
+    background-color: var(--light-pink);
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-title {
+    text-align: center;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: var(--content-spacing);
+    color: var(--text-dark);
+    font-weight: normal;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background-color: var(--dark-pink);
+}
+
+.couple-info {
+    width: min(100%, var(--section-max-width));
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--content-spacing);
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.couple-image {
+    position: relative;
+    width: 100%;
+    padding: 1rem;
+}
+
+.couple-image::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 2px solid var(--medium-pink);
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+.couple-image img {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 8px solid var(--medium-pink);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.couple-image img:hover {
+    transform: scale(1.02);
+}
+
+.person {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+}
+
+.person:hover {
+    transform: translateY(-5px);
+}
+
+.person h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: clamp(1rem, 3vw, 2rem);
+    color: var(--dark-pink);
+    font-weight: normal;
+}
+
+.story-content {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.story-content p {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+.countdown {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, var(--light-pink), white);
+    padding: var(--content-spacing);
+}
+
+.countdown-container {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    min-width: 150px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.countdown-item span:first-child {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: bold;
+    color: var(--dark-pink);
+    margin-bottom: 0.5rem;
+}
+
+.countdown-item .label {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--text-dark);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.dress-code {
+    padding: var(--content-spacing);
+    background-color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.attire-container {
+    width: min(100%, var(--section-max-width));
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin-top: 2rem;
+}
+
+.attire-section h3 {
+    text-align: center;
+    color: var(--dark-pink);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: 2rem;
+    font-weight: normal;
+}
+
+.attire-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.attire-item {
+    text-align: center;
+    padding: 1rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.attire-item:hover {
+    transform: translateY(-5px);
+}
+
+.attire-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.attire-item p {
+    color: var(--text-dark);
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+.attire-desc {
+    display: block;
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.ceremony-details {
+    padding: var(--content-spacing);
+    background: linear-gradient(to bottom right, white, var(--light-pink));
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.venues-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 3rem;
+    width: min(100%, var(--section-max-width));
+    padding: 0 1rem;
+}
+
+.venue-card {
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    flex: 1;
+    max-width: 400px;
+}
+
+.venue-icon {
+    font-size: 2.5rem;
+    color: var(--dark-pink);
+    margin-bottom: 1.5rem;
+}
+
+.venue-card h3 {
+    color: var(--dark-pink);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    font-weight: normal;
+}
+
+.venue-name {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.venue-details, .venue-address, .venue-plus {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.venue-coming-soon {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin: 2rem 0;
+}
+
+.venue-stay-tuned {
+    color: var(--dark-pink);
+    font-style: italic;
+}
+
+.venue-divider {
+    color: var(--dark-pink);
+    font-size: 1.2rem;
+    position: relative;
+}
+
+.map-btn {
+    margin-top: 2rem;
+    padding: 0.8rem 2rem;
+    background: transparent;
+    border: 1px solid var(--dark-pink);
+    color: var(--dark-pink);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.map-btn:hover {
+    background: var(--dark-pink);
+    color: white;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .couple-info {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .person {
+        padding: 1.5rem;
+        margin: 0 1rem;
+    }
+
+    .couple-image {
+        order: -1;
+        margin: 2rem auto;
+        max-width: 300px;
+    }
+
+    .our-story {
+        padding: var(--content-spacing) 1rem;
+    }
+
+    .countdown-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .countdown-item {
+        min-width: 120px;
+        padding: 1.5rem;
+    }
+
+    .attire-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .venues-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .venue-card {
+        width: 100%;
+        padding: 2rem;
+    }
+
+    .venue-divider {
+        margin: 1rem 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    :root {
+        --content-spacing: 2rem;
+    }
+
+    .person {
+        padding: 1rem;
+        margin: 0 0.5rem;
+    }
+
+    .couple-image {
+        max-width: 250px;
+    }
+
+    .section-title::after {
+        width: 40px;
+    }
+
+    .countdown-item {
+        min-width: 100px;
+        padding: 1rem;
+    }
+
+    .attire-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .attire-item img {
+        height: 250px;
+    }
+}
+
+@media screen and (max-height: 500px) {
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding: 2rem 0;
+    }
+    
+    .content {
+        margin: 2rem auto;
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    .content {
+        max-width: 1200px;
+    }
+}
