@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khay & TP Wedding</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'pink': {
+                            50: '#fdf2f8',
+                            100: '#fce7f3',
+                            200: '#fbcfe8',
+                            300: '#f9a8d4',
+                            400: '#f472b6',
+                            500: '#ec4899',
+                            600: '#db2777',
+                            700: '#be185d',
+                            800: '#9d174d',
+                            900: '#831843',
+                        },
+                        'blush': {
+                            50: '#fdf2f8',
+                            100: '#fce8f3',
+                            200: '#fad2e8',
+                            300: '#f8b4d9',
+                            400: '#f17ebc',
+                            500: '#e74694',
+                            600: '#d61f69',
+                            700: '#bf125d',
+                            800: '#99154b',
+                            900: '#751a3d',
+                        }
+                    },
+                    fontFamily: {
+                        'serif': ['Crimson Text', 'serif'],
+                        'script': ['Great Vibes', 'cursive'],
+                        'elegant': ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+        
+        * {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Crimson Text', serif;
+            line-height: 1.7;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* Animated Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(
+                135deg,
+                #fdf2f8 0%,
+                #fce7f3 20%,
+                #fbcfe8 40%,
+                #f9a8d4 60%,
+                #f472b6 80%,
+                #ec4899 100%
+            );
+            animation: gradientShift 20s ease-in-out infinite;
+        }
+        
+        /* Floating Floral Elements */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: 
+                radial-gradient(circle at 20% 10%, rgba(249, 168, 212, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(252, 231, 243, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 30% 70%, rgba(244, 114, 182, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(236, 72, 153, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(251, 207, 232, 0.1) 0%, transparent 60%);
+            animation: floralFloat 30s ease-in-out infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        @keyframes floralFloat {
+            0%, 100% { 
+                transform: translateY(0) rotate(0deg); 
+                opacity: 0.7;
+            }
+            50% { 
+                transform: translateY(-10px) rotate(2deg); 
+                opacity: 1;
+            }
+        }
+        
+        /* Decorative Floral Patterns */
+        .floral-decoration {
+            position: absolute;
+            opacity: 0.1;
+            pointer-events: none;
+            font-size: 3rem;
+            color: #f9a8d4;
+            animation: floralSway 15s ease-in-out infinite;
+        }
+        
+        .floral-decoration:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+        .floral-decoration:nth-child(2) { top: 20%; right: 8%; animation-delay: 2s; }
+        .floral-decoration:nth-child(3) { top: 60%; left: 3%; animation-delay: 4s; }
+        .floral-decoration:nth-child(4) { top: 80%; right: 5%; animation-delay: 6s; }
+        .floral-decoration:nth-child(5) { top: 40%; left: 90%; animation-delay: 8s; }
+        
+        @keyframes floralSway {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-5px) rotate(1deg); }
+            75% { transform: translateY(5px) rotate(-1deg); }
+        }
+        
+        .hero-section {
+            background: linear-gradient(
+                135deg, 
+                rgba(253, 242, 248, 0.3) 0%, 
+                rgba(252, 231, 243, 0.4) 30%, 
+                rgba(249, 168, 212, 0.2) 70%, 
+                rgba(244, 114, 182, 0.3) 100%
+            ),
+            linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.2)), 
+            url('hero-background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            position: relative;
+            backdrop-filter: blur(1px);
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 0%, rgba(236, 72, 153, 0.05) 100%);
+            pointer-events: none;
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(236, 72, 153, 0.15);
+        }
+        
+        .section-overlay {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+        
+        .section-overlay::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                145deg,
+                rgba(253, 242, 248, 0.3) 0%,
+                rgba(252, 231, 243, 0.2) 50%,
+                rgba(249, 168, 212, 0.1) 100%
+            );
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .timeline-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(253, 242, 248, 0.8));
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(236, 72, 153, 0.1);
+            border: 1px solid rgba(249, 168, 212, 0.2);
+        }
+        
+        .timeline-item:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(236, 72, 153, 0.2);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(249, 168, 212, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .timeline-item:hover::before {
+            opacity: 1;
+        }
+        
+        /* PRENUP GALLERY - FIXED */
+        .prenup-gallery {
+            display: grid;
+            gap: 1.5rem;
+            padding: 0;
+        }
+        
+        /* Mobile: 1 column */
+        @media (max-width: 767px) {
+            .prenup-gallery {
+                grid-template-columns: 1fr;
+                gap: 0;
+                padding: 0;
+                margin: 0;
+            }
+            
+            .prenup-item {
+                height: 200px;
+            }
+        }
+        
+        /* Desktop: single column, full width cards */
+        @media (min-width: 768px) {
+            .prenup-gallery {
+                grid-template-columns: 1fr;
+                max-width: none;
+                margin: 0;
+                gap: 0;
+                padding: 0;
+            }
+        }
+        
+        .prenup-item {
+            width: 100%;
+            height: 300px;
+            border-radius: 0;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 30px rgba(236, 72, 153, 0.15);
+            backdrop-filter: blur(5px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            background-size: cover;
+            background-position: center;
+        }
+        
+        /* Desktop: full width, no rounded corners */
+        @media (min-width: 768px) {
+            .prenup-item {
+                height: 500px;
+                border-radius: 0;
+            }
+        }
+        
+        .prenup-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 50px rgba(236, 72, 153, 0.25);
+        }
+        
+        .prenup-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .prenup-item:hover::after {
+            opacity: 1;
+        }
+        
+        .story-card {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(253, 242, 248, 0.9));
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(249, 168, 212, 0.2);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(236, 72, 153, 0.12);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .story-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(236, 72, 153, 0.2);
+        }
+        
+        .story-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #ec4899, #f9a8d4, #fce7f3);
+        }
+        
+        .color-swatch {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            border: 3px solid rgba(255, 255, 255, 0.8);
+        }
+        
+        .color-swatch:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 10px 30px rgba(236, 72, 153, 0.3);
+        }
+        
+        .color-swatch::after {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.4));
+            z-index: -1;
+        }
+        
+        .detail-card {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(253, 242, 248, 0.9));
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(249, 168, 212, 0.2);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(236, 72, 153, 0.15);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+        
+        .detail-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(236, 72, 153, 0.2);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #ec4899, #f9a8d4);
+            color: white;
+            padding: 0.875rem 2rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(236, 72, 153, 0.4);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.9);
+            color: #ec4899;
+            border: 1px solid rgba(236, 72, 153, 0.2);
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(236, 72, 153, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(236, 72, 153, 0.05);
+            border-color: #f9a8d4;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px rgba(236, 72, 153, 0.15);
+        }
+        
+        .section-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            background: linear-gradient(135deg, #ec4899, #f9a8d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            margin-bottom: 3rem;
+            text-shadow: 0 2px 4px rgba(236, 72, 153, 0.1);
+        }
+        
+        .floating-hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .floating-hearts::before,
+        .floating-hearts::after {
+            content: '♥';
+            position: absolute;
+            color: rgba(249, 168, 212, 0.2);
+            font-size: 2rem;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .floating-hearts::before {
+            top: 10%;
+            left: 10%;
+            animation-delay: -2s;
+        }
+        
+        .floating-hearts::after {
+            top: 70%;
+            right: 15%;
+            animation-delay: -4s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.2; }
+            50% { transform: translateY(-20px) rotate(5deg); opacity: 0.4; }
+        }
+        
+        /* Desktop optimizations */
+        @media (min-width: 769px) {
+            .timeline-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 4rem;
+                padding: 0 4rem;
+            }
+            
+            .timeline-item {
+                min-height: 400px;
+                width: 100%;
+            }
+            
+            .timeline-item .h-32 {
+                height: 320px;
+            }
+            
+            .timeline-item .sm\\:h-40 {
+                height: 320px;
+            }
+        }
+        
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            .hero-section {
+                background-attachment: scroll;
+                padding: 2rem 1rem;
+            }
+            
+            .timeline-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+                margin-bottom: 2rem;
+                max-width: none;
+                padding: 0;
+            }
+            
+            .story-card {
+                padding: 1.5rem;
+                margin: 1rem 0;
+            }
+            
+            .color-swatch {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .section-title {
+                margin-bottom: 2rem;
+            }
+            
+            .floral-decoration {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .timeline-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5rem;
+            }
+            
+            .story-card {
+                padding: 1.25rem;
+            }
+            
+            .detail-card {
+                padding: 1.5rem;
+            }
+            
+            .floral-decoration {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Decorative Floral Elements -->
+    <div class="floral-decoration">🌸</div>
+    <div class="floral-decoration">🌺</div>
+    <div class="floral-decoration">🌷</div>
+    <div class="floral-decoration">🌹</div>
+    <div class="floral-decoration">💐</div>
+
+    <!-- Hero Section -->
+    <section class="hero-section flex flex-col items-center justify-center text-center text-white relative">
+        <div class="floating-hearts"></div>
+        <div class="relative z-10">
+            <h1 class="font-script text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal mb-4 drop-shadow-lg">Khay & TP</h1>
+            <p class="font-elegant text-xl sm:text-2xl md:text-3xl mb-8 tracking-wider">December 5, 2025</p>
+            
+            <!-- Countdown Timer -->
+            <div class="glass-effect rounded-2xl p-6 sm:p-8 mb-10 mx-4 max-w-lg">
+                <h2 class="font-script text-2xl sm:text-3xl mb-6">Counting the Moments</h2>
+                <div class="grid grid-cols-4 gap-3 sm:gap-4">
+                    <div class="glass-effect rounded-xl p-3 sm:p-4">
+                        <div id="days" class="text-2xl sm:text-3xl font-bold mb-1">00</div>
+                        <div class="text-xs sm:text-sm opacity-90">Days</div>
+                    </div>
+                    <div class="glass-effect rounded-xl p-3 sm:p-4">
+                        <div id="hours" class="text-2xl sm:text-3xl font-bold mb-1">00</div>
+                        <div class="text-xs sm:text-sm opacity-90">Hours</div>
+                    </div>
+                    <div class="glass-effect rounded-xl p-3 sm:p-4">
+                        <div id="minutes" class="text-2xl sm:text-3xl font-bold mb-1">00</div>
+                        <div class="text-xs sm:text-sm opacity-90">Minutes</div>
+                    </div>
+                    <div class="glass-effect rounded-xl p-3 sm:p-4">
+                        <div id="seconds" class="text-2xl sm:text-3xl font-bold mb-1">00</div>
+                        <div class="text-xs sm:text-sm opacity-90">Seconds</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Add to Calendar Button -->
+            <a href="https://calendar.app.google/8n1CTNWR8cY7i6MB6" 
+               target="_blank" 
+               class="btn-primary inline-flex items-center space-x-2 text-lg">
+                <i class="far fa-calendar-plus"></i>
+                <span>Add to Calendar</span>
+            </a>
+        </div>
+        <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10">
+        <a href="#journey" class="text-white/80 hover:text-white transition">
+            <i class="fas fa-chevron-down text-2xl animate-bounce"></i>
+        </a>
+    </div>
+    
+    </section>
+
+    <!-- Journey Timeline Section -->
+    <section id="journey" class="py-16 sm:py-20 px-4 sm:px-6 section-overlay">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="section-title">Our Journey Together</h2>
+            
+            <div class="timeline-grid mb-12">   
+                <div class="timeline-item group">
+                    <div class="h-32 sm:h-40 bg-gradient-to-br from-pink-200 to-blush-200 flex items-center justify-center text-pink-600 text-4xl rounded-t-xl" 
+                         style="background-image: url('timeline-2018.jpg'); background-size: cover; background-position: center;">
+                    </div>
+                    <div class="p-4 text-center">
+                        <div class="font-elegant text-pink-600 font-semibold text-lg">2018</div>
+                        <div class="text-gray-600 text-sm mt-1">The Beginning</div>
+                    </div>
+                </div>
+                <div class="timeline-item group">
+                    <div class="h-32 sm:h-40 bg-gradient-to-br from-pink-200 to-blush-200 flex items-center justify-center text-pink-600 text-4xl rounded-t-xl" 
+                         style="background-image: url('timeline-2018.jpg'); background-size: cover; background-position: center;">
+                    </div>
+                    <div class="p-4 text-center">
+                        <div class="font-elegant text-pink-600 font-semibold text-lg">2018</div>
+                        <div class="text-gray-600 text-sm mt-1">The Beginning</div>
+                    </div>
+                </div>
+                <div class="timeline-item group">
+                    <div class="h-32 sm:h-40 bg-gradient-to-br from-pink-200 to-blush-200 flex items-center justify-center text-pink-600 text-4xl rounded-t-xl" 
+                         style="background-image: url('timeline-2018.jpg'); background-size: cover; background-position: center;">
+                    </div>
+                    <div class="p-4 text-center">
+                        <div class="font-elegant text-pink-600 font-semibold text-lg">2018</div>
+                        <div class="text-gray-600 text-sm mt-1">The Beginning</div>
+                    </div>
+                </div>
+                <div class="timeline-item group">
+                    <div class="h-32 sm:h-40 bg-gradient-to-br from-pink-200 to-blush-200 flex items-center justify-center text-pink-600 text-4xl rounded-t-xl" 
+                         style="background-image: url('timeline-2018.jpg'); background-size: cover; background-position: center;">
+                    </div>
+                    <div class="p-4 text-center">
+                        <div class="font-elegant text-pink-600 font-semibold text-lg">2018</div>
+                        <div class="text-gray-600 text-sm mt-1">The Beginning</div>
+                    </div>
+                </div>
+                <div class="timeline-item group">
+                    <div class="h-32 sm:h-40 bg-gradient-to-br from-pink-200 to-blush-200 flex items-center justify-center text-pink-600 text-4xl rounded-t-xl" 
+                         style="background-image: url('timeline-2018.jpg'); background-size: cover; background-position: center;">
+                    </div>
+                    <div class="p-4 text-center">
+                        <div class="font-elegant text-pink-600 font-semibold text-lg">2018</div>
+                        <div class="text-gray-600 text-sm mt-1">The Beginning</div>
+                    </div>
+                </div>
+                <div class="timeline-item group">
+                    <div class="h-32 sm:h-40 bg-gradient-to-br from-pink-200 to-blush-200 flex items-center justify-center text-pink-600 text-4xl rounded-t-xl" 
+                         style="background-image: url('timeline-2018.jpg'); background-size: cover; background-position: center;">
+                    </div>
+                    <div class="p-4 text-center">
+                        <div class="font-elegant text-pink-600 font-semibold text-lg">2018</div>
+                        <div class="text-gray-600 text-sm mt-1">The Beginning</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="space-y-8 sm:space-y-12">
+                <!-- First Meeting -->
+                <div class="flex flex-col lg:flex-row items-center gap-8">
+                        <div class="lg:w-1/3">
+                        <div class="h-64 sm:h-80 rounded-2xl overflow-hidden">
+                            <img src="first-meeting.jpg" alt="Our First Meeting" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="lg:w-2/3">
+                        <div class="story-card">
+                            <h3 class="font-elegant text-2xl sm:text-3xl font-semibold text-pink-600 mb-4">Our First Meeting</h3>
+                            <p class="text-gray-700 text-lg leading-relaxed">blah blah blah blah blah blah blah blah blah blah blah blah</p>
+                        </div>
+                    </div>
+                </div>
+                  <div class="flex flex-col lg:flex-row-reverse items-center gap-8">
+                    <div class="lg:w-1/3">
+                        <div class="h-64 sm:h-80 rounded-2xl overflow-hidden">
+                            <img src="" alt="The Proposal" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="lg:w-2/3">
+                        <div class="story-card">
+                            <h3 class="font-elegant text-2xl sm:text-3xl font-semibold text-pink-600 mb-4">Our First Meeting</h3>
+                            <p class="text-gray-700 text-lg leading-relaxed">blah blah blah blah blah blah blah blah blah blah blah blah</p>
+                        </div>
+                    </div>
+                    </div>
+
+                <div class="flex flex-col lg:flex-row items-center gap-8">
+                    <div class="lg:w-1/3">
+                        <div class="h-64 sm:h-80 rounded-2xl overflow-hidden">
+                            <img src="first-meeting.jpg" alt="Our First Meeting" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="lg:w-2/3">
+                        <div class="story-card">
+                            <h3 class="font-elegant text-2xl sm:text-3xl font-semibold text-pink-600 mb-4">The Proposal</h3>
+                            <p class="text-gray-700 text-lg leading-relaxed">The magical moment when we decided to spend the rest of our lives together. It was perfect, intimate, and filled with all the love we've built over the years.</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                 <div class="flex flex-col lg:flex-row-reverse items-center gap-8">
+                    <div class="lg:w-1/3">
+                        <div class="h-64 sm:h-80 rounded-2xl overflow-hidden">
+                            <img src="proposal.jpg" alt="The Proposal" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="lg:w-2/3">
+                        <div class="story-card">
+                            <h3 class="font-elegant text-2xl sm:text-3xl font-semibold text-pink-600 mb-4">The Proposal</h3>
+                            <p class="text-gray-700 text-lg leading-relaxed">The magical moment when we decided to spend the rest of our lives together. It was perfect, intimate, and filled with all the love we've built over the years.</p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prenup Photos Section -->
+    <section class="py-16 sm:py-20 section-overlay relative overflow-hidden">
+        <div class="relative z-10">
+            <h2 class="font-script text-4xl sm:text-5xl md:text-6xl text-pink-800 text-center mb-12 drop-shadow-sm px-4 sm:px-6">Our Prenup Photos</h2>
+            
+            <div class="prenup-gallery">
+                <div class="prenup-item bg-white/20 flex items-center justify-center text-pink-700 text-5xl"
+                     style="background-image: url('prenup-1.jpg');">
+                    
+                </div>
+                
+                <div class="prenup-item bg-white/20 flex items-center justify-center text-pink-700 text-5xl"
+                     style="background-image: url('prenup-2.jpg');">
+                    
+                </div>
+                
+                <div class="prenup-item bg-white/20 flex items-center justify-center text-pink-700 text-5xl"
+                     style="background-image: url('prenup-3.jpg');">
+                    
+                </div>
+                
+                <div class="prenup-item bg-white/20 flex items-center justify-center text-pink-700 text-5xl"
+                     style="background-image: url('prenup-4.jpg');">
+                    
+                </div>
+                
+                <div class="prenup-item bg-white/20 flex items-center justify-center text-pink-700 text-5xl"
+                     style="background-image: url('prenup-5.jpg');">
+                    
+                </div>
+                
+                <div class="prenup-item bg-white/20 flex items-center justify-center text-pink-700 text-5xl"
+                     style="background-image: url('prenup-6.jpg');">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What to Wear Section -->
+    <section class="py-16 sm:py-20 px-4 sm:px-6 section-overlay">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="section-title">What to Wear</h2>
+            
+            <div class="text-center mb-12">
+                <div class="glass-effect rounded-2xl p-6 shadow-lg max-w-2xl mx-auto">
+                    <p class="text-gray-700 text-lg leading-relaxed">
+                        To honor our special day, we kindly ask that you <span class="text-pink-600 font-semibold">avoid wearing white</span> 
+                        and leave that color for the bride to shine. We invite you to join our color palette in these elegant tones:
+                    </p>
+                </div>
+            </div>
+            
+            <div class="flex flex-col items-center">
+                <h3 class="font-elegant text-2xl sm:text-3xl text-pink-600 mb-8 font-semibold">Our Wedding Colors</h3>
+                <div class="flex flex-wrap justify-center items-center gap-6 mb-8">
+                    <div class="text-center">
+                        <div class="color-swatch bg-[#B68973] mb-3 mx-auto"></div>
+                       
+                    </div>
+                    <div class="text-center">
+                        <div class="color-swatch bg-[#E8C4A0] mb-3 mx-auto"></div>
+                       
+                    </div>
+                    <div class="text-center">
+                        <div class="color-swatch bg-[#F4D7DA] mb-3 mx-auto"></div>
+                        
+                    </div>
+                    <div class="text-center">
+                        <div class="color-swatch bg-[#F8A5C2] mb-3 mx-auto"></div>
+                        
+                    </div>
+                    <div class="text-center">
+                        <div class="color-swatch bg-[#F78FA7] mb-3 mx-auto"></div>
+                        
+                    </div>
+                </div>
+                <div class="text-gray-600 glass-effect rounded-xl p-6 max-w-2xl">
+                    <p class="text-center leading-relaxed">
+                        These soft, complementary hues will create a harmonious and elegant atmosphere for our celebration. 
+                        Feel free to choose any outfit in these colors that makes you feel comfortable and festive!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wedding Details Section -->
+    <section class="py-16 sm:py-20 px-4 sm:px-6 section-overlay">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="section-title">Wedding Details</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+                <div class="detail-card">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-ring text-white text-xl"></i>
+                        </div>
+                        <h3 class="font-script text-3xl sm:text-4xl text-pink-600">Ceremony</h3>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start group">
+                            <div class="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center mr-4 mt-1 group-hover:bg-pink-200 transition-colors duration-300">
+                                <i class="fas fa-place-of-worship text-pink-600 text-sm"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-semibold text-gray-800 text-lg mb-1">Iglesia Ni Cristo Lokal ng Tanza</p>
+                                <p class="text-gray-600 leading-relaxed">415 San Agustin, Tanza, 4108 Cavite</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start group">
+                            <div class="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center mr-4 mt-1 group-hover:bg-pink-200 transition-colors duration-300">
+                                <i class="far fa-clock text-pink-600 text-sm"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-semibold text-gray-800 text-lg mb-1">Ceremony Time</p>
+                                <p class="text-gray-600 leading-relaxed">3:00 PM</p>
+                                <p class="text-gray-600 leading-relaxed">December 5, 2025</p>
+                            </div>
+                        </div>
+                        
+                        <div class="pt-4">
+                            <a href="https://share.google/7CmyJ1RwF471djQom" 
+                               target="_blank" 
+                               class="btn-primary inline-flex items-center space-x-2">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>View Location</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="detail-card">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-glass-cheers text-white text-xl"></i>
+                        </div>
+                        <h3 class="font-script text-3xl sm:text-4xl text-pink-600">Reception</h3>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start group">
+                            <div class="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center mr-4 mt-1 group-hover:bg-pink-200 transition-colors duration-300">
+                                <i class="fas fa-utensils text-pink-600 text-sm"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-semibold text-gray-800 text-lg mb-1">Venue</p>
+                                <p class="text-gray-600 leading-relaxed">To Be Announced</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start group">
+                            <div class="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center mr-4 mt-1 group-hover:bg-pink-200 transition-colors duration-300">
+                                <i class="far fa-clock text-pink-600 text-sm"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-semibold text-gray-800 text-lg mb-1">Reception Time</p>
+                                <p class="text-gray-600 leading-relaxed">Following the ceremony</p>
+                            </div>
+                        </div>
+                        
+                        <div class="pt-4">
+                            <button class="btn-secondary inline-flex items-center space-x-2 opacity-50 cursor-not-allowed">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Location Coming Soon</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- RSVP Section -->
+            <div class="mt-16 text-center">
+                <div class="glass-effect rounded-2xl p-8 sm:p-12 mx-auto max-w-2xl">
+                    <h3 class="font-script text-3xl sm:text-4xl text-pink-600 mb-4">Save the Date</h3>
+                    <p class="text-gray-700 text-lg mb-6 leading-relaxed">
+                        Your presence would make our special day even more meaningful. 
+                        We can't wait to celebrate this beautiful milestone with you!
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                        <a href="https://calendar.app.google/8n1CTNWR8cY7i6MB6" 
+                           target="_blank" 
+                           class="btn-primary inline-flex items-center space-x-2">
+                            <i class="far fa-calendar-plus"></i>
+                            <span>Add to Calendar</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-pink-400 via-pink-500 to-pink-600 text-white py-12 sm:py-16 px-4 sm:px-6 text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-pink-400/90 to-pink-600/90"></div>
+        <div class="relative z-10">
+            <div class="max-w-2xl mx-auto">
+                <h2 class="font-script text-4xl sm:text-5xl mb-4 drop-shadow-lg">Khay & TP</h2>
+                <div class="w-16 h-0.5 bg-white/30 mx-auto mb-6"></div>
+                <p class="font-elegant text-xl sm:text-2xl mb-6 tracking-wider">December 5, 2025</p>
+                <p class="text-pink-100 text-lg font-light leading-relaxed mb-8">
+                    We can't wait to celebrate this beautiful journey with all of you. 
+                    Thank you for being part of our love story.
+                </p>
+                <div class="flex justify-center space-x-6 text-2xl text-pink-200">
+                    <i class="fas fa-heart animate-pulse"></i>
+                    <i class="fas fa-infinity"></i>
+                    <i class="fas fa-heart animate-pulse" style="animation-delay: 1s;"></i>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Floating elements -->
+        <div class="absolute top-10 left-10 text-pink-300/20 text-6xl animate-bounce" style="animation-duration: 4s;">♥</div>
+        <div class="absolute bottom-20 right-20 text-pink-300/20 text-4xl animate-bounce" style="animation-duration: 5s; animation-delay: 2s;">♥</div>
+        <div class="absolute top-1/2 left-20 text-pink-300/20 text-3xl animate-bounce" style="animation-duration: 6s; animation-delay: 1s;">♥</div>
+    </footer>
+
+    <script>
+        // Countdown timer with enhanced animation
+        function updateCountdown() {
+            const weddingDate = new Date('December 5, 2025 15:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+            
+            if (distance < 0) {
+                document.getElementById('days').innerText = '00';
+                document.getElementById('hours').innerText = '00';
+                document.getElementById('minutes').innerText = '00';
+                document.getElementById('seconds').innerText = '00';
+                return;
+            }
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Add animation class when numbers change
+            const elements = ['days', 'hours', 'minutes', 'seconds'];
+            const values = [days, hours, minutes, seconds];
+            
+            elements.forEach((id, index) => {
+                const element = document.getElementById(id);
+                const newValue = values[index].toString().padStart(2, '0');
+                
+                if (element.innerText !== newValue) {
+                    element.style.transform = 'scale(1.1)';
+                    element.style.transition = 'transform 0.2s ease';
+                    setTimeout(() => {
+                        element.style.transform = 'scale(1)';
+                    }, 200);
+                }
+                
+                element.innerText = newValue;
+            });
+        }
+        
+        // Enhanced scroll animations
+        function addScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe elements for scroll animation
+            document.querySelectorAll('.timeline-item, .story-card, .detail-card, .prenup-item').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+            addScrollAnimations();
+        });
+        
+        // Add some interactivity to color swatches
+        document.querySelectorAll('.color-swatch').forEach(swatch => {
+            swatch.addEventListener('click', function() {
+                this.style.transform = 'scale(1.2) rotate(5deg)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html>
